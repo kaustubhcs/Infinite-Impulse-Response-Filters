@@ -91,6 +91,12 @@ title('Butterworth Filter')
 %%
 % <<D:\Github Live\Infinite-Impulse-Response-Filters\Source\graph1.gif>>
 % 
+%% Butterworth Filter Characteristics
+
+%%
+% <<D:\Github Live\Infinite-Impulse-Response-Filters\Source\graph1.gif>>
+% 
+
 
 
 %% Derivation of order
@@ -126,7 +132,7 @@ title('Chebyshev Type I Lowpass Filter')
 
 %% Applying the Chebyshev Type II filter function
 
-[b,a] = cheby2(n,Ap,Wp);
+[b,a] = cheby2(n,As,Wp);
 
 %% Converting to frequency domain.
 [h,w] = freqz(b,a);
