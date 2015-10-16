@@ -80,7 +80,7 @@ W = w*Fs/pi;
 % To remove the negative values of h we take absolute
 h = abs(h);
 
-%% The PLOT
+%% The PLOT for Butterworth Filter
 
 figure();
 plot(W,h);
