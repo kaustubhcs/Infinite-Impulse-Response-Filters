@@ -120,6 +120,7 @@ title('Chebyshev Type I Lowpass Filter')
 %% Applying the Chebyshev Type II filter function
 
 [b,a] = cheby2(n,Ap,Wp);
+%% Converting to frequency domain.
 [h,w] = freqz(b,a);
 %%
 % Again since the obtained input was in Normalized Form we get it back by
