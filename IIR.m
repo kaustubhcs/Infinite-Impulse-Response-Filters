@@ -86,6 +86,13 @@ figure();
 plot(W,h);
 title('Butterworth Filter')
 
+%% Butterworth Filter Characteristics
+
+%%
+% <<D:\Github Live\Infinite-Impulse-Response-Filters\Source\graph1.gif>>
+% 
+
+
 %% Derivation of order
 
 [n,Wp] = cheb1ord(Wp,Ws,Ap,As);
