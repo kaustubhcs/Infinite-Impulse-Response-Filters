@@ -75,13 +75,7 @@ Ws = Ws / Fs;
 % multiplying with Sampling Frequency
 W = w*Fs/pi;
 
-
-%%
-% To remove the negative values of h we take absolute
 h = abs(h);
-
-%% The PLOT
-
 figure();
 plot(W,h);
 title('Butterworth Filter')
@@ -91,16 +85,8 @@ title('Butterworth Filter')
 [n,Wp] = cheb1ord(Wp,Ws,Ap,As);
 [b,a] = cheby1(n,Ap,Wp);
 [h,w] = freqz(b,a);
-%%
-% Again since the obtained input was in Normalized Form we get it back by
-% multiplying with Sampling Frequency
 W = w*Fs/pi;
-%%
-% Again to remove the negative values of h we take absolute
 h = abs(h);
-
-%% The PLOT for Chebyshev Type I Filter
-
 figure();
 plot(W,h);
 title('Chebyshev Type I Lowpass Filter')
@@ -111,16 +97,8 @@ title('Chebyshev Type I Lowpass Filter')
 [n,Wp] = cheb2ord(Wp,Ws,Ap,As);
 [b,a] = cheby2(n,Ap,Wp);
 [h,w] = freqz(b,a);
-%%
-% Again since the obtained input was in Normalized Form we get it back by
-% multiplying with Sampling Frequency
 W = w*Fs/pi;
-%%
-% Again to remove the negative values of h we take absolute
 h = abs(h);
-
-%% The PLOT for Chebyshev Type II Filter
-
 figure();
 plot(W,h);
 title('Chebyshev Type II Lowpass Filter')
