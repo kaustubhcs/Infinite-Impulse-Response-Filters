@@ -42,7 +42,7 @@ Ws = 150;
 Ws = Ws / Fs;
 
 
-%% Derivation by butterord
+%% Derivation of order by butterord
 
 [n,Wn] = buttord(Wp,Ws,Ap,As);
 
@@ -86,11 +86,17 @@ figure();
 plot(W,h);
 title('Butterworth Filter')
 
-
+%% Derivation of order
 
 [n,Wp] = cheb1ord(Wp,Ws,Ap,As);
+
+%% Applying the Chebyshev Type I filter function
+
 [b,a] = cheby1(n,Ap,Wp);
+
+%% Converting to frequency domain.
 [h,w] = freqz(b,a);
+
 %%
 % Again since the obtained input was in Normalized Form we get it back by
 % multiplying with Sampling Frequency
@@ -106,9 +112,13 @@ plot(W,h);
 title('Chebyshev Type I Lowpass Filter')
 
 
+%% Derivation of order
 
 
 [n,Wp] = cheb2ord(Wp,Ws,Ap,As);
+
+%% Applying the Chebyshev Type II filter function
+
 [b,a] = cheby2(n,Ap,Wp);
 [h,w] = freqz(b,a);
 %%
@@ -130,8 +140,8 @@ title('Chebyshev Type II Lowpass Filter')
 
 %% Author: Kaustubh Shivdikar
 % MATLAB Lab experiment of Linear to circular convolution.
-%
-% <<D:\MATLAB Files\matlablogo.png>>
-%
+% 
+% <<D:\Github Live\Infinite-Impulse-Response-Filters\Source\matlablogo.png>>
+% 
 
 
