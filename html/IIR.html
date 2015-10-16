@@ -66,7 +66,7 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
 
 
-  </style></head><body><div class="content"><h1>Infinite Impulse Response Filter Design</h1><!--introduction--><p>This code will prove to be classic example for proper use of the given functions for Butterworth filter, Chebyshev Type 1 filter and Chebyshev Type 2 Filter Design</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Inputs Provided</a></li><li><a href="#9">Derivation of order by butterord</a></li><li><a href="#10">Formula for Order n of Butterworth filter</a></li><li><a href="#14">Applying the Butterworth filter function</a></li><li><a href="#15">Converting to frequency domain.</a></li><li><a href="#18">The PLOT for Butterworth Filter</a></li><li><a href="#19">Butterworth Filter Characteristics</a></li><li><a href="#21">Butterworth Filter Characteristics</a></li><li><a href="#23">Derivation of order</a></li><li><a href="#24">Applying the Chebyshev Type I filter function</a></li><li><a href="#25">Converting to frequency domain.</a></li><li><a href="#28">The PLOT for Chebyshev Type I Filter</a></li><li><a href="#29">Derivation of order</a></li><li><a href="#30">Applying the Chebyshev Type II filter function</a></li><li><a href="#31">Converting to frequency domain.</a></li><li><a href="#34">The PLOT for Chebyshev Type II Filter</a></li><li><a href="#35">Author: Kaustubh Shivdikar</a></li></ul></div><h2>Inputs Provided<a name="1"></a></h2><p>Passband Attenuation</p><pre class="codeinput">Ap = 3;
+  </style></head><body><div class="content"><h1>Infinite Impulse Response Filter Design</h1><!--introduction--><p>This code will prove to be classic example for proper use of the given functions for Butterworth filter, Chebyshev Type 1 filter and Chebyshev Type 2 Filter Design</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Inputs Provided</a></li><li><a href="#9">Derivation of order by butterord</a></li><li><a href="#10">Formula for Order n of Butterworth filter</a></li><li><a href="#14">Applying the Butterworth filter function</a></li><li><a href="#15">Converting to frequency domain.</a></li><li><a href="#18">The PLOT for Butterworth Filter</a></li><li><a href="#19">Butterworth Filter Characteristics</a></li><li><a href="#21">Derivation of order</a></li><li><a href="#22">Applying the Chebyshev Type I filter function</a></li><li><a href="#23">Converting to frequency domain.</a></li><li><a href="#26">The PLOT for Chebyshev Type I Filter</a></li><li><a href="#27">Derivation of order</a></li><li><a href="#28">Applying the Chebyshev Type II filter function</a></li><li><a href="#29">Converting to frequency domain.</a></li><li><a href="#32">The PLOT for Chebyshev Type II Filter</a></li><li><a href="#33">Author: Kaustubh Shivdikar</a></li></ul></div><h2>Inputs Provided<a name="1"></a></h2><p>Passband Attenuation</p><pre class="codeinput">Ap = 3;
 </pre><p>Sampling Frequency</p><pre class="codeinput">Fs = 500;
 </pre><p>Stopband Attenuation</p><pre class="codeinput">As = 60;
 </pre><p>Passband Frequency</p><pre class="codeinput">Wp = 40;
@@ -81,23 +81,23 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 </pre><h2>The PLOT for Butterworth Filter<a name="18"></a></h2><pre class="codeinput">figure();
 plot(W,h);
 title(<span class="string">'Butterworth Filter'</span>)
-</pre><img vspace="5" hspace="5" src="IIR_01.png" alt=""> <h2>Butterworth Filter Characteristics<a name="19"></a></h2><p><img vspace="5" hspace="5" src="D:\Github Live\Infinite-Impulse-Response-Filters\Source\graph1.gif" alt=""> </p><h2>Butterworth Filter Characteristics<a name="21"></a></h2><p><img vspace="5" hspace="5" src="D:\Github Live\Infinite-Impulse-Response-Filters\Source\graph1.gif" alt=""> </p><h2>Derivation of order<a name="23"></a></h2><pre class="codeinput">[n,Wp] = cheb1ord(Wp,Ws,Ap,As);
-</pre><h2>Applying the Chebyshev Type I filter function<a name="24"></a></h2><pre class="codeinput">[b,a] = cheby1(n,Ap,Wp);
-</pre><h2>Converting to frequency domain.<a name="25"></a></h2><pre class="codeinput">[h,w] = freqz(b,a);
+</pre><img vspace="5" hspace="5" src="IIR_01.png" alt=""> <h2>Butterworth Filter Characteristics<a name="19"></a></h2><p><img vspace="5" hspace="5" src="D:\Github Live\Infinite-Impulse-Response-Filters\Source\graph1.gif" alt=""> </p><h2>Derivation of order<a name="21"></a></h2><pre class="codeinput">[n,Wp] = cheb1ord(Wp,Ws,Ap,As);
+</pre><h2>Applying the Chebyshev Type I filter function<a name="22"></a></h2><pre class="codeinput">[b,a] = cheby1(n,Ap,Wp);
+</pre><h2>Converting to frequency domain.<a name="23"></a></h2><pre class="codeinput">[h,w] = freqz(b,a);
 </pre><p>Again since the obtained input was in Normalized Form we get it back by multiplying with Sampling Frequency</p><pre class="codeinput">W = w*Fs/pi;
 </pre><p>Again to remove the negative values of h we take absolute</p><pre class="codeinput">h = abs(h);
-</pre><h2>The PLOT for Chebyshev Type I Filter<a name="28"></a></h2><pre class="codeinput">figure();
+</pre><h2>The PLOT for Chebyshev Type I Filter<a name="26"></a></h2><pre class="codeinput">figure();
 plot(W,h);
 title(<span class="string">'Chebyshev Type I Lowpass Filter'</span>)
-</pre><img vspace="5" hspace="5" src="IIR_02.png" alt=""> <h2>Derivation of order<a name="29"></a></h2><pre class="codeinput">[n,Wp] = cheb2ord(Wp,Ws,Ap,As);
-</pre><h2>Applying the Chebyshev Type II filter function<a name="30"></a></h2><pre class="codeinput">[b,a] = cheby2(n,As,Wp);
-</pre><h2>Converting to frequency domain.<a name="31"></a></h2><pre class="codeinput">[h,w] = freqz(b,a);
+</pre><img vspace="5" hspace="5" src="IIR_02.png" alt=""> <h2>Derivation of order<a name="27"></a></h2><pre class="codeinput">[n,Wp] = cheb2ord(Wp,Ws,Ap,As);
+</pre><h2>Applying the Chebyshev Type II filter function<a name="28"></a></h2><pre class="codeinput">[b,a] = cheby2(n,As,Wp);
+</pre><h2>Converting to frequency domain.<a name="29"></a></h2><pre class="codeinput">[h,w] = freqz(b,a);
 </pre><p>Again since the obtained input was in Normalized Form we get it back by multiplying with Sampling Frequency</p><pre class="codeinput">W = w*Fs/pi;
 </pre><p>Again to remove the negative values of h we take absolute</p><pre class="codeinput">h = abs(h);
-</pre><h2>The PLOT for Chebyshev Type II Filter<a name="34"></a></h2><pre class="codeinput">figure();
+</pre><h2>The PLOT for Chebyshev Type II Filter<a name="32"></a></h2><pre class="codeinput">figure();
 plot(W,h);
 title(<span class="string">'Chebyshev Type II Lowpass Filter'</span>)
-</pre><img vspace="5" hspace="5" src="IIR_03.png" alt=""> <h2>Author: Kaustubh Shivdikar<a name="35"></a></h2><p>MATLAB Lab experiment of Linear to circular convolution.</p><p><img vspace="5" hspace="5" src="D:\Github Live\Infinite-Impulse-Response-Filters\Source\matlablogo.png" alt=""> </p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2015a</a><br></p></div><!--
+</pre><img vspace="5" hspace="5" src="IIR_03.png" alt=""> <h2>Author: Kaustubh Shivdikar<a name="33"></a></h2><p>MATLAB Lab experiment of Linear to circular convolution.</p><p><img vspace="5" hspace="5" src="D:\Github Live\Infinite-Impulse-Response-Filters\Source\matlablogo.png" alt=""> </p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2015a</a><br></p></div><!--
 ##### SOURCE BEGIN #####
 %% Infinite Impulse Response Filter Design
 % This code will prove to be classic example for proper use of the given
@@ -187,11 +187,6 @@ figure();
 plot(W,h);
 title('Butterworth Filter')
 
-%% Butterworth Filter Characteristics
-
-%%
-% <<D:\Github Live\Infinite-Impulse-Response-Filters\Source\graph1.gif>>
-% 
 %% Butterworth Filter Characteristics
 
 %%

@@ -91,11 +91,6 @@ title('Butterworth Filter')
 %%
 % <<D:\Github Live\Infinite-Impulse-Response-Filters\Source\graph1.gif>>
 % 
-%% Butterworth Filter Characteristics
-
-%%
-% <<D:\Github Live\Infinite-Impulse-Response-Filters\Source\graph1.gif>>
-% 
 
 
 
