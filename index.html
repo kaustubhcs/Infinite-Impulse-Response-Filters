@@ -1,0 +1,244 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Infinite-impulse-response-filters by kaustubhcs</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/kaustubhcs/Infinite-Impulse-Response-Filters">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/kaustubhcs/Infinite-Impulse-Response-Filters/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/kaustubhcs/Infinite-Impulse-Response-Filters/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Infinite-impulse-response-filters</h1>
+          <p>Descirbed here in this repository are different types of IIR filters namely Butterworth, Chebyshev Type 1 and Chebyshev Type 2 filters</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/kaustubhcs">kaustubhcs</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h3>
+<a id="welcome-to-the-experiment-for-infinite-impulse-response-filter-design" class="anchor" href="#welcome-to-the-experiment-for-infinite-impulse-response-filter-design" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to the experiment for Infinite Impulse Response Filter Design</h3>
+
+<p>Here we see an example to demonstrate the use of the IIR filter design functions of MATLAB</p>
+
+<h2>
+<a id="if-you-are-looking-only-for-the-code---click-here" class="anchor" href="#if-you-are-looking-only-for-the-code---click-here" aria-hidden="true"><span class="octicon octicon-link"></span></a>If you are looking only for the <strong>CODE</strong>:   <a href="https://drive.google.com/file/d/0B0moyKGbvtKDV1A3andYVUp0SU0/view?usp=sharing">CLICK HERE</a>
+</h2>
+
+<h2>
+<a id="you-can-even-the-code-on-github-here" class="anchor" href="#you-can-even-the-code-on-github-here" aria-hidden="true"><span class="octicon octicon-link"></span></a>You can even the <strong>CODE</strong> on <a href="https://github.com/kaustubhcs/Infinite-Impulse-Response-Filters/blob/master/IIR.m">GITHUB HERE</a>
+</h2>
+
+<h2>
+<a id="if-you-are-looking-only-for-final-result---click-here" class="anchor" href="#if-you-are-looking-only-for-final-result---click-here" aria-hidden="true"><span class="octicon octicon-link"></span></a>If you are looking only for <strong>FINAL RESULT</strong>:   <a href="https://drive.google.com/file/d/0B0moyKGbvtKDX3VUYzV0QUROd28/view?usp=sharing">CLICK HERE</a>
+</h2>
+
+<h1>
+<a id="working-of-code" class="anchor" href="#working-of-code" aria-hidden="true"><span class="octicon octicon-link"></span></a>Working of <em>CODE</em>
+</h1>
+
+<h3>
+<a id="infinite-impulse-response-filter-design-this-code-will-prove-to-be-classic-example-for-proper-use-of-the-given-functions-for-butterworth-filter-chebyshev-type-1-filter-and-chebyshev-type-2-filter-design" class="anchor" href="#infinite-impulse-response-filter-design-this-code-will-prove-to-be-classic-example-for-proper-use-of-the-given-functions-for-butterworth-filter-chebyshev-type-1-filter-and-chebyshev-type-2-filter-design" aria-hidden="true"><span class="octicon octicon-link"></span></a>Infinite Impulse Response Filter Design. This code will prove to be classic example for proper use of the given functions for Butterworth filter, Chebyshev Type 1 filter and Chebyshev Type 2 Filter Design</h3>
+
+<h3>
+<a id="inputs-provided" class="anchor" href="#inputs-provided" aria-hidden="true"><span class="octicon octicon-link"></span></a>Inputs Provided</h3>
+
+<h3>
+<a id="passband-attenuation" class="anchor" href="#passband-attenuation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Passband Attenuation</h3>
+
+<pre><code>Ap = 3;
+</code></pre>
+
+<h3>
+<a id="sampling-frequency" class="anchor" href="#sampling-frequency" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sampling Frequency</h3>
+
+<pre><code>Fs = 500;
+</code></pre>
+
+<h3>
+<a id="stopband-attenuation" class="anchor" href="#stopband-attenuation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Stopband Attenuation</h3>
+
+<pre><code>As = 60;
+</code></pre>
+
+<h3>
+<a id="passband-frequency" class="anchor" href="#passband-frequency" aria-hidden="true"><span class="octicon octicon-link"></span></a>Passband Frequency</h3>
+
+<pre><code>Wp = 40;
+</code></pre>
+
+<h3>
+<a id="dividing-by-sampling-frequeny" class="anchor" href="#dividing-by-sampling-frequeny" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dividing by Sampling Frequeny</h3>
+
+<pre><code>Wp = Wp / Fs;
+</code></pre>
+
+<h3>
+<a id="stopband-frequency" class="anchor" href="#stopband-frequency" aria-hidden="true"><span class="octicon octicon-link"></span></a>Stopband Frequency</h3>
+
+<pre><code>Ws = 150;
+</code></pre>
+
+<h3>
+<a id="dividing-by-sampling-frequeny-1" class="anchor" href="#dividing-by-sampling-frequeny-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dividing by Sampling Frequeny</h3>
+
+<pre><code>Ws = Ws / Fs;
+</code></pre>
+
+<h3>
+<a id="derivation-of-order-by-butterord" class="anchor" href="#derivation-of-order-by-butterord" aria-hidden="true"><span class="octicon octicon-link"></span></a>Derivation of order by butterord</h3>
+
+<pre><code>[n,Wn] = buttord(Wp,Ws,Ap,As);
+</code></pre>
+
+<h3>
+<a id="formula-for-order-n-of-butterworth-filter" class="anchor" href="#formula-for-order-n-of-butterworth-filter" aria-hidden="true"><span class="octicon octicon-link"></span></a>Formula for Order n of Butterworth filter</h3>
+
+<pre><code>&lt;&lt;D:\Github Live\Infinite-Impulse-Response-Filters\Source\f6.png&gt;&gt;
+</code></pre>
+
+<h4>
+<a id="or-another-simplified-version-will-be" class="anchor" href="#or-another-simplified-version-will-be" aria-hidden="true"><span class="octicon octicon-link"></span></a>OR another simplified version will be</h4>
+
+<pre><code>&lt;&lt;D:\Github Live\Infinite-Impulse-Response-Filters\Source\f5.png&gt;&gt;
+</code></pre>
+
+<h3>
+<a id="applying-the-butterworth-filter-function" class="anchor" href="#applying-the-butterworth-filter-function" aria-hidden="true"><span class="octicon octicon-link"></span></a>Applying the Butterworth filter function</h3>
+
+<pre><code>[b,a] = butter(n,Wn);
+</code></pre>
+
+<h3>
+<a id="converting-to-frequency-domain" class="anchor" href="#converting-to-frequency-domain" aria-hidden="true"><span class="octicon octicon-link"></span></a>Converting to frequency domain.</h3>
+
+<pre><code>[h,w] = freqz(b,a);
+</code></pre>
+
+<h3>
+<a id="since-the-obtained-input-was-in-normalized-form-we-get-it-back-by-multiplying-with-sampling-frequency" class="anchor" href="#since-the-obtained-input-was-in-normalized-form-we-get-it-back-by-multiplying-with-sampling-frequency" aria-hidden="true"><span class="octicon octicon-link"></span></a>Since the obtained input was in Normalized Form we get it back by multiplying with Sampling Frequency</h3>
+
+<pre><code>W = w*Fs/pi;
+</code></pre>
+
+<h3>
+<a id="to-remove-the-negative-values-of-h-we-take-absolute" class="anchor" href="#to-remove-the-negative-values-of-h-we-take-absolute" aria-hidden="true"><span class="octicon octicon-link"></span></a>To remove the negative values of h we take absolute</h3>
+
+<pre><code>h = abs(h);
+</code></pre>
+
+<h3>
+<a id="the-plot-for-butterworth-filter" class="anchor" href="#the-plot-for-butterworth-filter" aria-hidden="true"><span class="octicon octicon-link"></span></a>The PLOT for Butterworth Filter</h3>
+
+<pre><code>figure();
+plot(W,h);
+title('Butterworth Filter')
+</code></pre>
+
+<h3>
+<a id="derivation-of-order" class="anchor" href="#derivation-of-order" aria-hidden="true"><span class="octicon octicon-link"></span></a>Derivation of order</h3>
+
+<pre><code>[n,Wp] = cheb1ord(Wp,Ws,Ap,As);
+</code></pre>
+
+<h3>
+<a id="applying-the-chebyshev-type-i-filter-function" class="anchor" href="#applying-the-chebyshev-type-i-filter-function" aria-hidden="true"><span class="octicon octicon-link"></span></a>Applying the Chebyshev Type I filter function</h3>
+
+<pre><code>[b,a] = cheby1(n,Ap,Wp);
+</code></pre>
+
+<h3>
+<a id="converting-to-frequency-domain-1" class="anchor" href="#converting-to-frequency-domain-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Converting to frequency domain.</h3>
+
+<pre><code>[h,w] = freqz(b,a);
+</code></pre>
+
+<h3>
+<a id="again-since-the-obtained-input-was-in-normalized-form-we-get-it-back-by-multiplying-with-sampling-frequency" class="anchor" href="#again-since-the-obtained-input-was-in-normalized-form-we-get-it-back-by-multiplying-with-sampling-frequency" aria-hidden="true"><span class="octicon octicon-link"></span></a>Again since the obtained input was in Normalized Form we get it back by multiplying with Sampling Frequency</h3>
+
+<pre><code>W = w*Fs/pi;
+</code></pre>
+
+<h3>
+<a id="again-to-remove-the-negative-values-of-h-we-take-absolute" class="anchor" href="#again-to-remove-the-negative-values-of-h-we-take-absolute" aria-hidden="true"><span class="octicon octicon-link"></span></a>Again to remove the negative values of h we take absolute</h3>
+
+<pre><code>h = abs(h);
+</code></pre>
+
+<h3>
+<a id="the-plot-for-chebyshev-type-i-filter" class="anchor" href="#the-plot-for-chebyshev-type-i-filter" aria-hidden="true"><span class="octicon octicon-link"></span></a>The PLOT for Chebyshev Type I Filter</h3>
+
+<pre><code>figure();
+plot(W,h);
+title('Chebyshev Type I Lowpass Filter')
+</code></pre>
+
+<h3>
+<a id="derivation-of-order-1" class="anchor" href="#derivation-of-order-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Derivation of order</h3>
+
+<pre><code>[n,Wp] = cheb2ord(Wp,Ws,Ap,As);
+</code></pre>
+
+<h3>
+<a id="applying-the-chebyshev-type-ii-filter-function" class="anchor" href="#applying-the-chebyshev-type-ii-filter-function" aria-hidden="true"><span class="octicon octicon-link"></span></a>Applying the Chebyshev Type II filter function</h3>
+
+<pre><code>[b,a] = cheby2(n,Ap,Wp);
+</code></pre>
+
+<h3>
+<a id="converting-to-frequency-domain-2" class="anchor" href="#converting-to-frequency-domain-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Converting to frequency domain.</h3>
+
+<pre><code>[h,w] = freqz(b,a);
+</code></pre>
+
+<h3>
+<a id="again-since-the-obtained-input-was-in-normalized-form-we-get-it-back-by-multiplying-with-sampling-frequency-1" class="anchor" href="#again-since-the-obtained-input-was-in-normalized-form-we-get-it-back-by-multiplying-with-sampling-frequency-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Again since the obtained input was in Normalized Form we get it back by multiplying with Sampling Frequency</h3>
+
+<pre><code>W = w*Fs/pi;
+</code></pre>
+
+<h3>
+<a id="again-to-remove-the-negative-values-of-h-we-take-absolute-1" class="anchor" href="#again-to-remove-the-negative-values-of-h-we-take-absolute-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Again to remove the negative values of h we take absolute</h3>
+
+<pre><code>h = abs(h);
+</code></pre>
+
+<p>%% The PLOT for Chebyshev Type II Filter
+    figure();
+    plot(W,h);
+    title('Chebyshev Type II Lowpass Filter')</p>
+
+<h5>
+<a id="author-kaustubh-shivdikar-matlab-lab-experiment-of-linear-to-circular-convolution" class="anchor" href="#author-kaustubh-shivdikar-matlab-lab-experiment-of-linear-to-circular-convolution" aria-hidden="true"><span class="octicon octicon-link"></span></a>Author: Kaustubh Shivdikar MATLAB Lab experiment of Linear to circular convolution.</h5>
+
+<pre><code>&lt;&lt;D:\Github Live\Infinite-Impulse-Response-Filters\Source\matlablogo.png&gt;&gt;
+</code></pre>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
