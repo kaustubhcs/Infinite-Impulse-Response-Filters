@@ -120,18 +120,20 @@ title('Chebyshev Type I Lowpass Filter')
 %% Applying the Chebyshev Type II filter function
 
 [b,a] = cheby2(n,Ap,Wp);
+
 %% Converting to frequency domain.
 [h,w] = freqz(b,a);
+
 %%
 % Again since the obtained input was in Normalized Form we get it back by
 % multiplying with Sampling Frequency
 W = w*Fs/pi;
+
 %%
 % Again to remove the negative values of h we take absolute
 h = abs(h);
 
 %% The PLOT for Chebyshev Type II Filter
-
 figure();
 plot(W,h);
 title('Chebyshev Type II Lowpass Filter')
